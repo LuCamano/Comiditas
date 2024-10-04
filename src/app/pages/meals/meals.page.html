@@ -1,0 +1,16 @@
+<app-header [title]="category" [backButton]="true" defaultHref="/categories"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" sizeMd="4" *ngFor="let meal of meals">
+        <ion-card color="tertiary" (click)="goToMealDetails(meal.idMeal)">
+          <ion-img [src]="meal.strMealThumb" [alt]="meal.strMeal"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{meal.strMeal}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

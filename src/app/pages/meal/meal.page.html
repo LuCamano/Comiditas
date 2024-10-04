@@ -1,0 +1,29 @@
+<app-header [title]="meal ? meal.strMeal : ''" [backButton]="true"></app-header>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row *ngIf="meal">
+      <ion-col size="12" sizeMd="4">
+        <ion-card color="tertiary">
+          <ion-img [src]="meal.strMealThumb" [alt]="meal.strMeal"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{meal.strMeal}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="8">
+        <ion-card color="tertiary">
+          <ion-card-header>
+            <ion-card-title>Details</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Category: {{meal.strCategory}}</p>
+            <p>Area: {{meal.strArea}}</p>
+            <p>Tags: {{meal.strTags}}</p>
+            <h3>Instructions</h3>
+            <p>{{meal.strInstructions}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
